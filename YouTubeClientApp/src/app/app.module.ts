@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SortPanelComponent } from './header/sort-panel/sort-panel.component';
 import { MainHeaderComponent } from './header/main-header/main-header.component';
+import { CardComponent } from './search-result/card/card.component';
+import { VideoInfoComponent } from './search-result/video-info/video-info.component';
+import { SearchResultContainerComponent } from './search-result/search-result-container/search-result-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SortPanelComponent,
-    MainHeaderComponent
+    MainHeaderComponent,
+    CardComponent,
+    VideoInfoComponent,
+    SearchResultContainerComponent
   ],
   imports: [
     BrowserModule,
