@@ -19,12 +19,14 @@ export interface IResponseItem {
   tags: [string],
   categoryId: string,
   liveBroadcastContent: string,
-  localized: {
-    title: string,
-    description: string
-  },
+  localized: ILocalized,
   defaultAudioLanguage: string,
   statistics: IResponseStatistic
+}
+
+interface ILocalized {
+  title: string,
+  description: string
 }
 
 interface IResponseSnippetThumbnails {
@@ -46,11 +48,13 @@ interface IResponseSnippet {
   channelId: string,
   title: string,
   description: string,
-  thumbnails: {
-    default: IResponseSnippetThumbnails,
-    medium: IResponseSnippetThumbnails,
-    high: IResponseSnippetThumbnails,
-    standard: IResponseSnippetThumbnails,
-    maxres: IResponseSnippetThumbnails
-  }
+  thumbnails: IThumbnails
+}
+
+interface IThumbnails {
+  default: IResponseSnippetThumbnails,
+  medium: IResponseSnippetThumbnails,
+  high: IResponseSnippetThumbnails,
+  standard: IResponseSnippetThumbnails,
+  maxres: IResponseSnippetThumbnails
 }
