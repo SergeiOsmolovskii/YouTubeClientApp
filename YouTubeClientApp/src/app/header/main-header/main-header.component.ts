@@ -6,11 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit {
-
+  
+  public isSettingsVisible = false;
 /*   constructor() { } */
 
   ngOnInit(): void {
     console.log('MainHeaderComponent');
   }
 
+  toggleSortSettings() {
+    if (this.isSettingsVisible === true) {
+      this.isSettingsVisible = false;
+    } else this.isSettingsVisible = true;
+  }
 }

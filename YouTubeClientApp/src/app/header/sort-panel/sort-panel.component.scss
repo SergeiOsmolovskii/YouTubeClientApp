@@ -1,0 +1,27 @@
+.sort-block-container {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
+}
+
+.sorting-param {
+  display: flex;
+}
+
+p {
+  margin-right: 11px;
+  font-size: 12px;
+  color: #929292;
+}
+
+.sorting-param p {
+  margin-right: 20px;
+  text-decoration: underline;
+  color: #2F80ED;
+  cursor: pointer;
+}
+
+input {
+  width: 150px;
+  border: none;
+}
