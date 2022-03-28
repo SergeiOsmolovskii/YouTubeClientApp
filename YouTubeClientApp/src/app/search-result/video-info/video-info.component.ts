@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IResponseItem } from 'src/app/models/video-response.model';
 
 @Component({
   selector: 'app-video-info',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-info.component.scss']
 })
 export class VideoInfoComponent implements OnInit {
+  @Input() videoInfo!: IResponseItem;
 
 /*   constructor() { } */
 

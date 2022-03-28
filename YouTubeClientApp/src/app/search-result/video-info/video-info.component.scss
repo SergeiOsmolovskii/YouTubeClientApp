@@ -1,0 +1,20 @@
+.like-block, .info-block, .info-block div {
+  display: flex;
+  justify-content: center;
+}
+
+.info-block {
+  margin-bottom: 20px;
+}
+
+.info-block div {
+  margin-right: 15px;
+}
+
+.info-block div:last-child {
+  margin-right: 0;
+}
+
+.info-block div img {
+  margin-right: 3px;
+}

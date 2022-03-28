@@ -9,6 +9,7 @@ import { CardComponent } from './search-result/card/card.component';
 import { VideoInfoComponent } from './search-result/video-info/video-info.component';
 import { SearchResultContainerComponent } from './search-result/search-result-container/search-result-container.component';
 import { ProfilePanelComponent } from './header/profile-panel/profile-panel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProfilePanelComponent } from './header/profile-panel/profile-panel.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

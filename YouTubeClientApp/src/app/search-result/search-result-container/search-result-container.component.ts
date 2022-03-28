@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IResponseItem } from 'src/app/models/video-response.model';
+import { VideoResponseService } from 'src/app/services/video-response.service';
 
 @Component({
   selector: 'app-search-result-container',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultContainerComponent implements OnInit {
 
-/*   constructor() { } */
+  public cards!: IResponseItem[];
+
+  constructor(private videoResponse: VideoResponseService) { }
 
   ngOnInit(): void {
-    console.log('SearchResultContainerComponent');
+    this.videoResponse.getResponse()
+      .subscribe(data => this.cards = data.items);
   }
 
 }
