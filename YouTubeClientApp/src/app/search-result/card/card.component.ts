@@ -6,13 +6,13 @@ import { IResponseItem } from 'src/app/models/video-response.model';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent /* implements OnInit */ {
   @Input() cards!: IResponseItem;
  
 /*  constructor() { } */
 
-  ngOnInit(): void {
+/*   ngOnInit(): void {
     console.log('CardComponent');
-  }
+  } */
 
 }

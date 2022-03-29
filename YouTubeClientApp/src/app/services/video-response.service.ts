@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { IVideoResponse } from '../models/video-response.model';
+import { IResponseItem, IVideoResponse } from '../models/video-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ import { IVideoResponse } from '../models/video-response.model';
 export class VideoResponseService {
   
   private url = './assets/response.json';
-
+  public response: IResponseItem[] = [];
+  
   constructor(private http: HttpClient) { }
 
   getResponse(): Observable<IVideoResponse> {

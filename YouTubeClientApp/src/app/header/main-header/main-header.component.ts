@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { VideoResponseService } from 'src/app/services/video-response.service';
 
 @Component({
   selector: 'app-main-header',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainHeaderComponent implements OnInit {
   
   public isSettingsVisible = false;
-/*   constructor() { } */
+  constructor(private videoResponse: VideoResponseService) { }
 
   ngOnInit(): void {
     console.log('MainHeaderComponent');
@@ -19,4 +20,9 @@ export class MainHeaderComponent implements OnInit {
       this.isSettingsVisible = false;
     } else this.isSettingsVisible = true;
   }
+
+  displaySearchResult() {
+    this.videoResponse.getResponse().subscribe(data => this.videoResponse.response = data.items);
+  }
+
 }

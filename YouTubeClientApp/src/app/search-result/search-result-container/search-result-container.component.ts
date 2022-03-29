@@ -7,15 +7,14 @@ import { VideoResponseService } from 'src/app/services/video-response.service';
   templateUrl: './search-result-container.component.html',
   styleUrls: ['./search-result-container.component.scss']
 })
-export class SearchResultContainerComponent implements OnInit {
+export class SearchResultContainerComponent /* implements OnInit */ {
 
-  public cards!: IResponseItem[];
+  public cards: IResponseItem[] = [];
 
-  constructor(private videoResponse: VideoResponseService) { }
+  constructor(public videoResponse: VideoResponseService) { }
 
-  ngOnInit(): void {
-    this.videoResponse.getResponse()
-      .subscribe(data => this.cards = data.items);
-  }
+/*   ngOnInit(): void {
+
+  } */
 
 }
