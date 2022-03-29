@@ -10,6 +10,7 @@ import { VideoInfoComponent } from './components/search-result/video-info/video-
 import { SearchResultContainerComponent } from './components/search-result/search-result-container/search-result-container.component';
 import { ProfilePanelComponent } from './components/header/profile-panel/profile-panel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BorderDependingOnTheDateDirective } from './directives/border-dependingonthedate.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     CardComponent,
     VideoInfoComponent,
     SearchResultContainerComponent,
-    ProfilePanelComponent
+    ProfilePanelComponent,
+    BorderDependingOnTheDateDirective
   ],
   imports: [
     BrowserModule,
