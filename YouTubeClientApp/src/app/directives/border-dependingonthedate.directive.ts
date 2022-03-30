@@ -11,19 +11,17 @@ export class BorderDependingOnTheDateDirective {
   constructor(
     private elementRef: ElementRef,
     private renderer: Renderer2
-  ) {
-    this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid red');
-  }
+  ) { }
   @Input()
   set appBorderDependingOnTheDate(publishedAt: string) {
     const publishedAtDate = new Date(publishedAt).getTime();
 
     if (publishedAtDate - this.sixMonthAgo < 0) {
-      this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid red');
+      this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid #2F80ED');
     } else if (publishedAtDate - this.sevenDaysAgo > 0 && publishedAtDate - this.monthAgo > 0) {
-      this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid blue');
+      this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid #EB5757');
     } else {
-      this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid green');
+      this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid #27AE60');
     }
   }
 

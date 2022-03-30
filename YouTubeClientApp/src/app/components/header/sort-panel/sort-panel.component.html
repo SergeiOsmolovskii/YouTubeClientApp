@@ -1,9 +1,11 @@
 <div class="container sort-block-container">
   <p>Sorting by:</p>
   <div class="sorting-param">
-    <p>date</p>
-    <p>count of views</p>
-    <p>by word or sentance</p>
+    <ul>
+      <li (click)="sortData('data')">date</li>
+      <li (click)="sortData('count')">count of views</li>
+      <li (click)="sortData('tags')">by word or sentance</li>
+    </ul>
   </div>
   <label>
     <input type="text">
