@@ -40,3 +40,27 @@ input {
   width: 150px;
   border: none;
 }
+
+.desc-sort, .asc-sort {
+  position: relative;
+}
+
+.desc-sort::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -12px;
+  width: 10px;
+  height: 10px;
+  background-image: url(../../../../assets/search/down-arrow.svg);
+}
+
+.asc-sort::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -12px;
+  width: 10px;
+  height: 10px;
+  background-image: url(../../../../assets/search/up-arrow.svg);
+}

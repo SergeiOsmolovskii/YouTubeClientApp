@@ -21,7 +21,7 @@ import { BorderDependingOnTheDateDirective } from './directives/border-depending
     VideoInfoComponent,
     SearchResultContainerComponent,
     ProfilePanelComponent,
-    BorderDependingOnTheDateDirective
+    BorderDependingOnTheDateDirective,
   ],
   imports: [
     BrowserModule,
