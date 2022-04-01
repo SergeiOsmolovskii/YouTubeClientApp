@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BorderDependingOnTheDateDirective } from './directives/border-dependingonthedate.directive';
 import { FilterSearchResultPipe } from './pipes/filter-search-result.pipe';
 import { FormsModule } from '@angular/forms';
+import { VideoInfoConvertPipe } from './pipes/video-info-convert.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     ProfilePanelComponent,
     BorderDependingOnTheDateDirective,
     FilterSearchResultPipe,
+    VideoInfoConvertPipe,
   ],
   imports: [
     BrowserModule,
