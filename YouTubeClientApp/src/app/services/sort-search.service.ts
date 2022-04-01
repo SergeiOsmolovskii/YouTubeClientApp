@@ -7,8 +7,8 @@ import { VideoResponseService } from './video-response.service';
 export class SortSearchService {
   public dataSort: string = '';
   public sortByCount: string = '';
-  public tagsSort: string = '';
-
+  public searchItem: string = '';
+  
   constructor(public videoResponse: VideoResponseService) {}
 
   switchSortDate() {
@@ -38,9 +38,6 @@ export class SortSearchService {
         break;
       case param === 'count':
         return this.switchSortCount();
-        break;
-      case param === 'tags':
-        return this.tagsSort;
         break;
       default:
         return;

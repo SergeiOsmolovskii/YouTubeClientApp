@@ -11,6 +11,8 @@ import { SearchResultContainerComponent } from './components/search-result/searc
 import { ProfilePanelComponent } from './components/header/profile-panel/profile-panel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BorderDependingOnTheDateDirective } from './directives/border-dependingonthedate.directive';
+import { FilterSearchResultPipe } from './pipes/filter-search-result.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { BorderDependingOnTheDateDirective } from './directives/border-depending
     SearchResultContainerComponent,
     ProfilePanelComponent,
     BorderDependingOnTheDateDirective,
+    FilterSearchResultPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
