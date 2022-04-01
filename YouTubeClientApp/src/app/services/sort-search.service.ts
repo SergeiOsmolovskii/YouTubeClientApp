@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
+import { currentSortType, sortType } from '../models/video-response.model';
 import { VideoResponseService } from './video-response.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SortSearchService {
-  public dataSort: string = '';
-  public sortByCount: string = '';
+  public dataSort: sortType = '';
+  public sortByCount: sortType = '';
   public searchItem: string = '';
-  
+  public currentSortParam: currentSortType = '';
+
   constructor(public videoResponse: VideoResponseService) {}
 
   switchSortDate() {
+    this.currentSortParam = 'data';
     if (this.dataSort === '') {
       this.dataSort = 'desc';
     } else if (this.dataSort === 'desc') {
@@ -22,6 +25,7 @@ export class SortSearchService {
   }
 
   switchSortCount() {
+    this.currentSortParam = 'count';
     if (this.sortByCount === '') {
       this.sortByCount = 'desc';
     } else if (this.sortByCount === 'desc') {
