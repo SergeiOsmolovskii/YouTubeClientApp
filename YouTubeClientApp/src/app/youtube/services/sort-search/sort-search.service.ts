@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { currentSortType, sortType } from '../models/video-response.model';
-import { VideoResponseService } from './video-response.service';
+import { currentSortType, sortType } from '../../models/video-response.model';
+import { VideoResponseService } from '../video-response/video-response.service';
 
 @Injectable({
   providedIn: 'root',

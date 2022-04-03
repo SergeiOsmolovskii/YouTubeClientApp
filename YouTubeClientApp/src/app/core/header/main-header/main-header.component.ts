@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { VideoResponseService } from 'src/app/services/video-response.service';
+import { VideoResponseService } from 'src/app/youtube/services/video-response/video-response.service';
 
 @Component({
   selector: 'app-main-header',

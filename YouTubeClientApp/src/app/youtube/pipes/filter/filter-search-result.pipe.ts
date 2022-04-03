@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IResponseItem } from '../models/video-response.model';
+import { IResponseItem } from '../../models/video-response.model';
 
 @Pipe({
   name: 'filterSearchResult'

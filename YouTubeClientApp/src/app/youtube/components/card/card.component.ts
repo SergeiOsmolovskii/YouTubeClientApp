@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IResponseItem } from 'src/app/models/video-response.model';
+import { IResponseItem } from 'src/app/youtube/models/video-response.model';
 
 @Component({
   selector: 'app-card',
