@@ -15,7 +15,6 @@ export class BorderDependingOnTheDateDirective {
   @Input()
   set appBorderDependingOnTheDate(publishedAt: string) {
     const publishedAtDate = new Date(publishedAt).getTime();
-
     if (publishedAtDate - this.sixMonthAgo < 0) {
       this.renderer.setStyle(this.elementRef.nativeElement, 'border-bottom', '5px solid #2F80ED');
     } else if (publishedAtDate - this.sevenDaysAgo > 0 && publishedAtDate - this.monthAgo > 0) {

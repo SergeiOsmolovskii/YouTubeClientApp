@@ -6,6 +6,7 @@ import { FilterSearchResultPipe } from './pipes/filter/filter-search-result.pipe
 import { VideoInfoConvertPipe } from './pipes/convert/video-info-convert.pipe';
 import { VideoInfoComponent } from './components/video-info/video-info.component';
 import { BorderDependingOnTheDateDirective } from './directives/border-depending-on-the-date.directive';
+import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -15,9 +16,10 @@ import { BorderDependingOnTheDateDirective } from './directives/border-depending
     VideoInfoComponent,
     FilterSearchResultPipe,
     VideoInfoConvertPipe,
-    BorderDependingOnTheDateDirective
+    BorderDependingOnTheDateDirective,
+    PageNotFoundComponent
   ],
   imports: [CommonModule],
-  exports: [SearchResultContainerComponent],
+  exports: [SearchResultContainerComponent, PageNotFoundComponent],
 })
 export class YoutubeModule {}

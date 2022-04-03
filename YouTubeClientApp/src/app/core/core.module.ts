@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainHeaderComponent } from './header/main-header/main-header.component';
-import { ProfilePanelComponent } from './header/profile-panel/profile-panel.component';
-import { SortPanelComponent } from './header/sort-panel/sort-panel.component';
 import { FormsModule } from '@angular/forms';
+import { MainHeaderComponent } from './components/header/main-header/main-header.component';
+import { ProfilePanelComponent } from './components/header/profile-panel/profile-panel.component';
+import { SortPanelComponent } from './components/header/sort-panel/sort-panel.component';
+import { SearchResultContainerComponent } from '../youtube/components/search-result-container/search-result-container.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { YoutubeModule } from '../youtube/youtube.module';
 
 @NgModule({
   declarations: [
     MainHeaderComponent,
     ProfilePanelComponent,
-    SortPanelComponent
+    SortPanelComponent,
+    MainPageComponent
   ],
-  imports: [CommonModule, FormsModule],
-  exports: [MainHeaderComponent],
+  imports: [
+    CommonModule,
+    FormsModule, 
+    YoutubeModule
+  ],
+  exports: [MainHeaderComponent, MainPageComponent],
 })
 export class CoreModule {}
