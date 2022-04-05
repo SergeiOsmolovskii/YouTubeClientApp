@@ -4,11 +4,13 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { RegistrationComponent } from './auth/components/registration/registration.component';
 import { MainPageComponent } from './core/pages/main-page/main-page.component';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
+import { DetailedVideoInfoComponent } from './youtube/pages/detailed-video-info/detailed-video-info.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent},
+  { path: 'test', component: DetailedVideoInfoComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -7,6 +7,7 @@ import { VideoInfoConvertPipe } from './pipes/convert/video-info-convert.pipe';
 import { VideoInfoComponent } from './components/video-info/video-info.component';
 import { BorderDependingOnTheDateDirective } from './directives/border-depending-on-the-date.directive';
 import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-found.component';
+import { DetailedVideoInfoComponent } from './pages/detailed-video-info/detailed-video-info.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-fou
     FilterSearchResultPipe,
     VideoInfoConvertPipe,
     BorderDependingOnTheDateDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DetailedVideoInfoComponent
   ],
   imports: [CommonModule],
   exports: [SearchResultContainerComponent, PageNotFoundComponent],
