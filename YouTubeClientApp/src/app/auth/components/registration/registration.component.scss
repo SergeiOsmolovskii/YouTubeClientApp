@@ -1,0 +1,67 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 345px;
+  padding: 25px 20px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  margin: 0px 0px 10px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 10px;
+  color: #828282;
+}
+
+input {
+  margin-bottom: 5px;
+  padding: 12px 8px;
+  background-color: #E0E0E0;
+  border: none;
+  font-size: 10px;
+}
+
+.first-name-block,
+.last-name-block,
+.login-block,
+.mail-block,
+.password-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.password-block {
+  margin-bottom: 20px;
+}
+
+.buttons-block {
+  text-align: right;
+}
+
+a {
+  margin-right: 14px;
+  font-size: 12px;
+  color: #2F80ED;
+  cursor: pointer;
+}
+
+button[type='submit'] {
+  padding: 8px 48px;
+  background-color: #2F80ED;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  filter: drop-shadow(2px 0px 4px #2F80ED);
+}
