@@ -1,0 +1,20 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 140px);
+}
+
+h1 {
+  margin: 0;
+  width: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #828282;
+}
+
+.img-block {
+  height: 90px;
+  margin-right: 25px;
+}
