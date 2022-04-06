@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { MainHeaderComponent } from './components/header/main-header/main-header.component';
 import { ProfilePanelComponent } from './components/header/profile-panel/profile-panel.component';
 import { SortPanelComponent } from './components/header/sort-panel/sort-panel.component';
-import { SearchResultContainerComponent } from '../youtube/components/search-result-container/search-result-container.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { YoutubeModule } from '../youtube/youtube.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { YoutubeModule } from '../youtube/youtube.module';
   imports: [
     CommonModule,
     FormsModule, 
-    YoutubeModule
+    YoutubeModule,
+    RouterModule
   ],
   exports: [MainHeaderComponent, MainPageComponent],
 })
