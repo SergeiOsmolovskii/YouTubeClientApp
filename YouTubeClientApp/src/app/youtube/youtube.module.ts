@@ -8,6 +8,7 @@ import { VideoInfoComponent } from './components/video-info/video-info.component
 import { BorderDependingOnTheDateDirective } from './directives/border-depending-on-the-date.directive';
 import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-found.component';
 import { DetailedVideoInfoComponent } from './pages/detailed-video-info/detailed-video-info.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { DetailedVideoInfoComponent } from './pages/detailed-video-info/detailed
     PageNotFoundComponent,
     DetailedVideoInfoComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [SearchResultContainerComponent, PageNotFoundComponent],
 })
 export class YoutubeModule {}
