@@ -6,8 +6,7 @@ import { ProfilePanelComponent } from './components/header/profile-panel/profile
 import { SortPanelComponent } from './components/header/sort-panel/sort-panel.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { YoutubeModule } from '../youtube/youtube.module';
-import { RouterModule } from '@angular/router';
-
+import { CoreRoutingModule } from './core-routing.module';
 @NgModule({
   declarations: [
     MainHeaderComponent,
@@ -19,7 +18,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule, 
     YoutubeModule,
-    RouterModule
+    CoreRoutingModule
   ],
   exports: [MainHeaderComponent, MainPageComponent],
 })
