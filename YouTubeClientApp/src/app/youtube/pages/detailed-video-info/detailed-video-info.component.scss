@@ -5,10 +5,12 @@ main {
 button {
   width: 32px;
   height: 32px; 
+  padding: 16px;
   background: url(../../../../assets/video-detail-page/back-arrow.svg) no-repeat center;
   background-color: #2F80ED;
   border: none;
   border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
 }
 
 .main-container {
@@ -29,6 +31,7 @@ button {
 
 h2 {
   margin: 0;
+  width: 70%;
 }
 
 .video-title-block {

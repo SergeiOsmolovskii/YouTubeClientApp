@@ -1,13 +1,13 @@
 <main class="container">
-  <button></button>
+  <button (click)="goBack()"></button>
   <div class="main-container">
     <div class="video-block">
       <img src={{videoInfo.snippet.thumbnails.maxres.url}}>
     </div>
-    <div class="video-info">
+    <div class="video-info" appBorderDependingOnTheDate={{videoInfo.snippet.publishedAt}}>
       <div class="video-title-block">
         <h2>{{videoInfo.snippet.title}}</h2>
-        <p>{{videoInfo.snippet.publishedAt}}</p>
+        <p>{{videoInfo.snippet.publishedAt | date : 'fullDate'}}</p>
       </div>
       <h4>Description:</h4>
       <p class="description-text">{{videoInfo.snippet.description}}</p>
