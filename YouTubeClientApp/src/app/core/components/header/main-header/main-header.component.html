@@ -1,0 +1,14 @@
+<header>
+  <div class="container main-header-container">
+    <div class="search-header-block">
+      <a class="logo"></a>
+      <label>
+        <input type="text" name="" id="">
+      </label>
+      <button routerLink="/search" class="search-button" (click)="displaySearchResult()">search</button>
+      <button  class="setting" (click)="toggleSortSettings()"></button>
+    </div>
+    <app-profile-panel></app-profile-panel>
+  </div>
+  <app-sort-panel *ngIf="isSettingsVisible"></app-sort-panel>
+</header>
