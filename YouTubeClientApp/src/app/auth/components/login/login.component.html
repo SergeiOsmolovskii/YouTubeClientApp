@@ -1,17 +1,16 @@
-<form action="">
+<form #loginForm="ngForm" (submit)="auth.submit(loginForm)">
   <h2>Login</h2>
   <div class="login-block">
     <label for="login">login</label>
-    <input type="text" name="login" required>
+    <input type="text" name="login" [(ngModel)]="auth.login" required autocomplete>
   </div>
   <div class="password-block">
     <label for="password">password</label>
-    <input type="password" name="password" required>
+    <input type="password" name="password" [(ngModel)]="auth.password" required autocomplete>
   </div>
 
   <div class="buttons-block">
     <a routerLink="/registration"> Registration</a>
     <button type="submit">Login</button>
   </div>
-
 </form>

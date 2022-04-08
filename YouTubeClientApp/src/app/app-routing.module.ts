@@ -6,7 +6,8 @@ import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-foun
 const routes: Routes = [
   { 
     path: '',
-    loadChildren: () => import('./core/core.module').then(m => m.CoreModule)
+    loadChildren: () => import('./core/core.module').then(m => m.CoreModule),
+    canActivate: [AuthGuard]
   },
   { 
     path: '',
@@ -14,7 +15,8 @@ const routes: Routes = [
   },
   { 
     path: 'search',
-    loadChildren: () => import('./youtube/youtube.module').then(m => m.YoutubeModule)
+    loadChildren: () => import('./youtube/youtube.module').then(m => m.YoutubeModule),
+    canActivate: [AuthGuard]
   },
   { 
     path: '**', 
