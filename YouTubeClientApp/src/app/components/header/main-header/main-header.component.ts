@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { VideoResponseService } from 'src/app/services/video-response.service';
 
 @Component({
@@ -6,22 +6,19 @@ import { VideoResponseService } from 'src/app/services/video-response.service';
   templateUrl: './main-header.component.html',
   styleUrls: ['./main-header.component.scss']
 })
-export class MainHeaderComponent implements OnInit {
+
+export class MainHeaderComponent {
   
   public isSettingsVisible = false;
   constructor(private videoResponse: VideoResponseService) { }
 
-  ngOnInit(): void {
-    console.log('MainHeaderComponent');
-  }
-
-  toggleSortSettings() {
-    if (this.isSettingsVisible === true) {
+  toggleSortSettings(): void {
+    if (this.isSettingsVisible) {
       this.isSettingsVisible = false;
     } else this.isSettingsVisible = true;
   }
 
-  displaySearchResult() {
+  displaySearchResult(): void {
     this.videoResponse.getResponse().subscribe(data => this.videoResponse.response = data.items);
   }
 

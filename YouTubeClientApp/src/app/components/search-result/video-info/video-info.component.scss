@@ -1,4 +1,4 @@
-.like-block, .info-block, .info-block div {
+.info-block, .info {
   display: flex;
   justify-content: center;
 }
@@ -7,14 +7,14 @@
   margin-bottom: 20px;
 }
 
-.info-block div {
+.info {
   margin-right: 15px;
 }
 
-.info-block div:last-child {
+.info:last-child {
   margin-right: 0;
 }
 
-.info-block div img {
+.info img {
   margin-right: 3px;
 }
