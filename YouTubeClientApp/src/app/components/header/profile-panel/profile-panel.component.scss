@@ -1,0 +1,18 @@
+.user-name {
+  margin-right: 8px;
+  font-size: 12px;
+  color: #4F4F4F;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile-icon {
+  width: 24px;
+  height: 24px;
+  background: url(../../../../assets/header/profileIcon.svg) center no-repeat;
+  cursor: pointer;
+}

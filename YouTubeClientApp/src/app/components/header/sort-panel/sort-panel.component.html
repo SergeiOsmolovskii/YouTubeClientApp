@@ -1,0 +1,15 @@
+<div class="container sort-block-container">
+  <p class="sort-info">Sorting by:</p>
+  <div class="sorting-param">
+    <ul class="sort-list">
+      <li class="sort-list-item" [ngClass]="{'desc-sort': (sortSearch.dataSort === 'desc' && sortSearch.currentSortParam === 'date'),'asc-sort': (sortSearch.dataSort === 'asc' && sortSearch.currentSortParam === 'date')}"
+        (click)="sortSearch.sortDate('date')">date</li>
+      <li class="sort-list-item" [ngClass]="{'desc-sort': (sortSearch.sortByCount === 'desc' && sortSearch.currentSortParam === 'count'),'asc-sort': (sortSearch.sortByCount === 'asc' && sortSearch.currentSortParam === 'count')}"
+        (click)="sortSearch.sortCount('count')">count of views</li>
+      <li class="sort-list-item">by word or sentance</li>
+    </ul>
+  </div>
+  <label>
+    <input class="sort-filter-input" [(ngModel)]="sortSearch.searchItem" type="text">
+  </label>
+</div>
