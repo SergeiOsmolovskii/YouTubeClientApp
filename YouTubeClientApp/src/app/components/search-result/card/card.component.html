@@ -1,8 +1,8 @@
 <div class="card" appBorderDependingOnTheDate={{cards.snippet.publishedAt}}>
   <div class="card-img">
-    <img src="{{cards.snippet.thumbnails.standard.url}}" alt="video-img">
+    <img class="card-preview" [src]="cards.snippet.thumbnails.standard.url" alt="video-img">
   </div>
   <app-video-info [videoInfo]="cards"></app-video-info>
-  <h3>{{cards.snippet.title}}</h3>
+  <h3 class="card-title">{{cards.snippet.title}}</h3>
   <button class="details-button">more...</button>
 </div>

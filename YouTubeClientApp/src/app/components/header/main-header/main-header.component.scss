@@ -1,5 +1,4 @@
-// @import 'styles-constants.scss';
-header {
+.main-header {
   background-color: #e5e5e5;
 }
 
@@ -41,7 +40,7 @@ header {
   font-size: 12px;
   color: #fff;
   filter: var(--mainFilter);
-  background-color: #2F80ED;
+  background-color: var(--blueColor);
   border: none;
   border-radius: 0px 4px 4px 0px;
   cursor: pointer;
@@ -52,7 +51,7 @@ header {
   height: 24px;
   filter: var(--mainFilter);
   background: url(../../../../assets/header/sortSetting.svg) center no-repeat;
-  background-color: #2F80ED;
+  background-color: var(--blueColor);
   border: none;
   border-radius: 5px;
   cursor: pointer;

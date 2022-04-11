@@ -1,5 +1,5 @@
 export type sortType = 'desc' | 'asc' | '';
-export type currentSortType = 'data' | 'count' | '';
+export type currentSortType = 'date' | 'count' | '';
 
 export interface IVideoResponse {
   kind: string,
