@@ -1,5 +1,5 @@
-header {
-  background-color: #E5E5E5;
+.main-header {
+  background-color: #e5e5e5;
 }
 
 .main-header-container {
@@ -24,12 +24,12 @@ header {
   background-image: url(../../../../../assets/header/logo.svg);
 }
 
-input {
+.search-input {
   width: 400px;
   padding: 5px;
   font-size: 12px;
-  color: #333333;
-  background: #EFEFEF;
+  color: var(--grayColor);
+  background: #efefef;
   border: none;
 }
 
@@ -39,8 +39,8 @@ input {
   padding: 5px 22px;
   font-size: 12px;
   color: #fff;
-  filter: drop-shadow(2px 0px 4px #2F80ED);
-  background-color: #2F80ED;
+  filter: var(--mainFilter);
+  background-color: var(--blueColor);
   border: none;
   border-radius: 0px 4px 4px 0px;
   cursor: pointer;
@@ -49,9 +49,9 @@ input {
 .setting {
   width: 24px;
   height: 24px;
-  filter: drop-shadow(2px 0px 4px #2F80ED);
+  filter: var(--mainFilter);
   background: url(../../../../../assets/header/sortSetting.svg) center no-repeat;
-  background-color: #2F80ED;
+  background-color: var(--blueColor);
   border: none;
   border-radius: 5px;
   cursor: pointer;

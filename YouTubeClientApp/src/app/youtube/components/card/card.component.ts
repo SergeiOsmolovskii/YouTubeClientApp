@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IResponseItem } from 'src/app/youtube/models/video-response.model';
 
 @Component({
@@ -6,15 +6,10 @@ import { IResponseItem } from 'src/app/youtube/models/video-response.model';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent /* implements OnInit */ {
+
+export class CardComponent {
   @Input() cards!: IResponseItem;
  
-/*  constructor() { } */
+  constructor() { }
 
-/*   ngOnInit(): void {
-    console.log('CardComponent');
-  } */
-  log() {
-    console.log(this.cards);
-  }
 }

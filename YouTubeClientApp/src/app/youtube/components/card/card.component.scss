@@ -1,6 +1,4 @@
 :host {
-  --mainMargin: 35px;
-  --blueColor: #2F80ED;
   margin-bottom: var(--mainMargin);
 }
 
@@ -17,11 +15,11 @@
   margin-bottom: 20px;
 }
 
-img {
+.card-preview {
   width: 100%;
 }
 
-h3 {
+.card-title {
   height: 110px;
   margin: 0;
   text-align: center;
@@ -29,7 +27,7 @@ h3 {
   color: #4F4F4F;
 }
 
-button {
+.details-button {
   display: block;
   margin: 0 auto;
   padding: 7px 41px;

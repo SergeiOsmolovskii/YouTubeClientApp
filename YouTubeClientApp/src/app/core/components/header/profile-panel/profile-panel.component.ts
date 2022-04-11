@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -6,16 +6,12 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   templateUrl: './profile-panel.component.html',
   styleUrls: ['./profile-panel.component.scss']
 })
-export class ProfilePanelComponent implements OnInit {
+export class ProfilePanelComponent {
 
   /* then fix to observable */
   
   constructor(public auth: AuthService) { }
 
   public userLogin: string = localStorage.getItem('userLogin') || 'Your name';
-
-  ngOnInit(): void {
-    console.log('ProfilePanelComponent');
-  }
 
 }

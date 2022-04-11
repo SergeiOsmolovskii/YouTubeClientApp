@@ -1,12 +1,12 @@
-<header>
+<header class="main-header">
   <div class="container main-header-container">
     <div class="search-header-block">
-      <a class="logo"></a>
+      <a class="logo" routerLink=''></a>
       <label>
-        <input type="text" name="" id="">
+        <input class="search-input" type="text" id="search">
       </label>
-      <button routerLink="/search" class="search-button" (click)="displaySearchResult()">search</button>
-      <button  class="setting" (click)="toggleSortSettings()"></button>
+      <button class="search-button" (click)="displaySearchResult()">search</button>
+      <button class="setting" (click)="toggleSortSettings()"></button>
     </div>
     <app-profile-panel></app-profile-panel>
   </div>
