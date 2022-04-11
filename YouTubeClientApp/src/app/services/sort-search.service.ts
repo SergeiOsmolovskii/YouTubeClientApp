@@ -17,7 +17,7 @@ export class SortSearchService {
 
   switchSortDate(): void {
     this.currentSortParam = currentSortParam.date;
-    if (this.dataSort === '') {
+    if (!this.dataSort) {
       this.dataSort = sortParam.desc;
     } else if (this.dataSort === sortParam.desc) {
       this.dataSort = sortParam.asc;
@@ -28,7 +28,7 @@ export class SortSearchService {
 
   switchSortCount(): void {
     this.currentSortParam = currentSortParam.count;
-    if (this.sortByCount === '') {
+    if (!this.sortByCount) {
       this.sortByCount = sortParam.desc;
     } else if (this.sortByCount === sortParam.desc) {
       this.sortByCount = sortParam.asc;
