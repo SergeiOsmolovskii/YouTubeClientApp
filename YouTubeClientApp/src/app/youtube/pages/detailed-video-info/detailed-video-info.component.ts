@@ -14,7 +14,7 @@ export class DetailedVideoInfoComponent implements OnInit {
 
   constructor(
     private routInfo: ActivatedRoute, 
-    public videoResponse: VideoResponseService, 
+    private videoResponse: VideoResponseService, 
     private location: Location) { }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class DetailedVideoInfoComponent implements OnInit {
     return this.videoResponse.response.find(item => item.id === id)!;
   }
 
-  goBack() {
+  goBack(): void {
     this.location.back();
   }
 }

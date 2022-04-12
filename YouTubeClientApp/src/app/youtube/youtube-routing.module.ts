@@ -4,7 +4,7 @@ import { SearchResultContainerComponent } from './components/search-result-conta
 import { DetailedVideoInfoComponent } from './pages/detailed-video-info/detailed-video-info.component';
 
 const routes: Routes = [
-  { path: '', 
+  { path: 'search', 
     component: SearchResultContainerComponent 
   },
   { 
