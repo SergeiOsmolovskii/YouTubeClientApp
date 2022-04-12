@@ -20,13 +20,12 @@ export class VideoResponseService {
   constructor(private http: HttpClient) { }
 
   getResponse(): Observable<IVideoResponse> {
-    const url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=${this.resultsCount}&key=${this.apiKey}&q=${this.word}`;
+    const url = `search?part=snippet&type=video&maxResults=${this.resultsCount}&q=${this.word}`;
     return this.http.get<IVideoResponse>(url);
   }
 
   getStatic(): Observable<IVideoResponse> {
-    const id = ['Rf54BH35yrY', 'Rf54BH35yrY'];
-    const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&key=${this.apiKey}&id=${this.IDArr}`;
+    const url = `videos?part=snippet%2Cstatistics&id=${this.IDArr}`;
     return this.http.get<IVideoResponse>(url);
   }
 }

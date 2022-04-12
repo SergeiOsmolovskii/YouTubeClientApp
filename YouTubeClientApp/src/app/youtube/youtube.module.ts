@@ -9,6 +9,8 @@ import { BorderDependingOnTheDateDirective } from './directives/border-depending
 import { PageNotFoundComponent } from '../core/pages/page-not-found/page-not-found.component';
 import { DetailedVideoInfoComponent } from './pages/detailed-video-info/detailed-video-info.component';
 import { YoutubeRoutingModule } from './youtube-routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { YoutubeInterceptor } from './interceptors/youtube.interceptor';
 
 
 @NgModule({
@@ -30,5 +32,10 @@ import { YoutubeRoutingModule } from './youtube-routing.module';
     SearchResultContainerComponent,
     PageNotFoundComponent
   ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: YoutubeInterceptor,
+    multi: true
+  }],
 })
 export class YoutubeModule {}
