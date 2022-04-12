@@ -10,6 +10,8 @@ import { VideoResponseService } from 'src/app/youtube/services/video-response/vi
 export class MainHeaderComponent {
   
   public isSettingsVisible = false;
+  public word = 'angular';
+  
   constructor(private videoResponse: VideoResponseService) { }
 
   toggleSortSettings(): void {
@@ -19,7 +21,21 @@ export class MainHeaderComponent {
   }
 
   displaySearchResult(): void {
-    this.videoResponse.getResponse().subscribe(data => this.videoResponse.response = data.items);
+    this.videoResponse.getResponse().subscribe(data => {
+      this.videoResponse.response = data.items
+      this.videoResponse.response.map(item => this.videoResponse.IDArr.push(item.id.videoId));
+      this.videoResponse.getStatic().subscribe(data => {
+        this.videoResponse.static = data.items;
+        this.videoResponse.response.forEach((element, index) => {
+          element.statistics = this.videoResponse.static[index].statistics;
+        });
+      });
+    });
+  }
+  
+  search(word: string): void {
+    this.videoResponse.word = word;
+    this.displaySearchResult();  
   }
 
 }

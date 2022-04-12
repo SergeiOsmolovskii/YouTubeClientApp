@@ -22,7 +22,7 @@ export class DetailedVideoInfoComponent implements OnInit {
   }
 
   getCurrentItem(id: string): IResponseItem {
-    return this.videoResponse.response.find(item => item.id === id)!;
+    return this.videoResponse.response.find(item => item.id.videoId === id)!;
   }
 
   goBack(): void {

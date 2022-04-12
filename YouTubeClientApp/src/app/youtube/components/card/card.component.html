@@ -1,8 +1,8 @@
 <div class="card" [appBorderDependingOnTheDate]="cards.snippet.publishedAt">
   <div class="card-img">
-    <img class="card-preview" [src]="cards.snippet.thumbnails.standard.url" alt="video-img">
+    <img class="card-preview" [src]="cards.snippet.thumbnails.medium.url" alt="video-img">
   </div>
   <app-video-info [videoInfo]="cards"></app-video-info>
   <h3 class="card-title">{{cards.snippet.title}}</h3>
-  <button class="details-button" [routerLink]="['video/', cards.id]">more...</button>
+  <button class="details-button" [routerLink]="['video/', cards.id.videoId]">more...</button>
 </div>

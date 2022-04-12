@@ -2,7 +2,7 @@
   <button class="back-button" (click)="goBack()"></button>
   <div class="main-container">
     <div class="video-block">
-      <img class="current-video" [src]="videoInfo.snippet.thumbnails.maxres.url">
+      <img class="current-video" [src]="videoInfo.snippet.thumbnails.medium.url">
     </div>
     <div class="video-info" [appBorderDependingOnTheDate]="videoInfo.snippet.publishedAt">
       <div class="video-title-block">

@@ -16,7 +16,7 @@ interface IPageInfo {
 export interface IResponseItem {
   kind: string,
   etag: string,
-  id: string,
+  id: IId,
   snippet: IResponseSnippet,
   channelTitle: string,
   tags: [string],
@@ -25,6 +25,11 @@ export interface IResponseItem {
   localized: ILocalized,
   defaultAudioLanguage: string,
   statistics: IResponseStatistic
+}
+
+interface IId {
+  kind: string, 
+  videoId: string
 }
 
 interface ILocalized {
