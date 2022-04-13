@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { debounceTime, Observable, tap } from 'rxjs';
 import { VideoResponseService } from 'src/app/youtube/services/video-response/video-response.service';
 
 @Component({
@@ -8,11 +9,33 @@ import { VideoResponseService } from 'src/app/youtube/services/video-response/vi
 })
 
 export class MainHeaderComponent {
+
+  @ViewChild('searchWord') public searchWord!: ElementRef<HTMLInputElement>;
   
   public isSettingsVisible = false;
-  public word = 'angular';
-  
+  private word = '';
+  private isTyping = false;
+
   constructor(private videoResponse: VideoResponseService) { }
+
+  public ngAfterViewInit(): void {
+    const input: HTMLInputElement = this.searchWord.nativeElement;
+
+    const inputVal: Observable<string> = new Observable((observer) => {
+      input.oninput = () => observer.next(input.value);
+    });
+  
+    inputVal.pipe(
+      tap(() => this.isTyping = true),
+      debounceTime(1000),
+      tap(() => this.isTyping = false),
+    ).subscribe((value) => {
+      if (!this.isTyping) {
+        this.word = value;
+        this.search();
+      }
+    });
+  }
 
   toggleSortSettings(): void {
     if (this.isSettingsVisible) {
@@ -21,7 +44,7 @@ export class MainHeaderComponent {
   }
 
   displaySearchResult(): void {
-    this.videoResponse.getResponse().subscribe(data => {
+    this.videoResponse.getResponse(this.word).subscribe(data => {
       this.videoResponse.response = data.items
       this.videoResponse.response.map(item => this.videoResponse.IDArr.push(item.id.videoId));
       this.videoResponse.getStatic().subscribe(data => {
@@ -32,9 +55,8 @@ export class MainHeaderComponent {
       });
     });
   }
-  
-  search(word: string): void {
-    this.videoResponse.word = word;
+    
+  search(): void {
     this.displaySearchResult();  
   }
 

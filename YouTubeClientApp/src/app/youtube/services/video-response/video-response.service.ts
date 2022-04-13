@@ -8,8 +8,7 @@ import { IResponseItem, IVideoResponse } from '../../models/video-response.model
 })
 
 export class VideoResponseService {
-  
-  private apiKey = 'AIzaSyCjsnzmoLaHoHHhxMYgdiOQ735ItdWRTaM';
+
   private resultsCount = 20;
   public response: IResponseItem[] = [];
   public word = '';
@@ -19,8 +18,8 @@ export class VideoResponseService {
 
   constructor(private http: HttpClient) { }
 
-  getResponse(): Observable<IVideoResponse> {
-    const url = `search?part=snippet&type=video&maxResults=${this.resultsCount}&q=${this.word}`;
+  getResponse(word: string): Observable<IVideoResponse> {
+    const url = `search?part=snippet&type=video&maxResults=${this.resultsCount}&q=${word}`;
     return this.http.get<IVideoResponse>(url);
   }
 
