@@ -17,6 +17,7 @@ export interface IResponseItem {
   kind: string,
   etag: string,
   id: IId,
+  nextPageToken: string,
   snippet: IResponseSnippet,
   statistics: IResponseStatistic
 }

@@ -45,6 +45,7 @@ export class MainHeaderComponent implements AfterViewInit {
   displaySearchResult(): void {
     this.videoResponse.getResponse(this.word).subscribe(data => {
       this.videoResponse.response = data.items;
+      console.log(this.videoResponse.response);
     });
   }
     
