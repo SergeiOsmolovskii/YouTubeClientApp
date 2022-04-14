@@ -16,3 +16,19 @@
   background: url(../../../../../assets/header/profileIcon.svg) center no-repeat;
   cursor: pointer;
 }
+
+.auth {
+  height: 24px;
+  padding: 0 15px;
+  margin: 0 5px;
+  color: #fff;
+  filter: var(--mainFilter);
+  background-color: var(--blueColor);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth:hover {
+  filter: brightness(110%);
+}

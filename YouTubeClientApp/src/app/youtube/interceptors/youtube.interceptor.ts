@@ -7,7 +7,7 @@ export class YoutubeInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const APIKey = 'AIzaSyDVx2twub2CorQjaSrE1r6ZI0bsVjcLHyk';
+    const APIKey = 'AIzaSyCjsnzmoLaHoHHhxMYgdiOQ735ItdWRTaM';
     const URL = 'https://youtube.googleapis.com/youtube/v3';
 
     return next.handle(
