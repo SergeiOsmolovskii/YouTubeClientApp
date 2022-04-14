@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { mergeMap, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IResponseItem, IVideoResponse } from '../../models/video-response.model';
 
@@ -20,7 +20,13 @@ export class VideoResponseService {
 
   getResponse(word: string): Observable<IVideoResponse> {
     const url = `search?part=snippet&type=video&maxResults=${this.resultsCount}&q=${word}`;
-    return this.http.get<IVideoResponse>(url);
+    return this.http.get<IVideoResponse>(url).pipe(
+      mergeMap(data => {
+        data.items.map(item => this.IDArr.push(item.id.videoId));
+        return of(data.items);
+      }),
+      mergeMap(() => this.getStatic())
+    );
   }
 
   getStatic(): Observable<IVideoResponse> {

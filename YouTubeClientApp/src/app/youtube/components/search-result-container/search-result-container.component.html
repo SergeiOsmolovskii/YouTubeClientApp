@@ -1,5 +1,5 @@
 <main class="container">
   <div class="cards-container">
-    <app-card [cards]="card" *ngFor="let card of videoResponse.response | filterSearchResult: sortSearch.searchItem; index as i"></app-card>
+    <app-card [cards]="card" *ngFor="let card of videoResponse.response | filterSearchResult: sortSearch.searchItem"></app-card>
   </div>
 </main>

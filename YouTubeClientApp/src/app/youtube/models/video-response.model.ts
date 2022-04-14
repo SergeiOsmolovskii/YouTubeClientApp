@@ -18,23 +18,20 @@ export interface IResponseItem {
   etag: string,
   id: IId,
   snippet: IResponseSnippet,
-  channelTitle: string,
-  tags: [string],
-  categoryId: string,
-  liveBroadcastContent: string,
-  localized: ILocalized,
-  defaultAudioLanguage: string,
+  statistics: IResponseStatistic
+}
+
+export interface IFinalResponseItem {
+  kind: string,
+  etag: string,
+  id: string,
+  snippet: IResponseSnippet,
   statistics: IResponseStatistic
 }
 
 interface IId {
   kind: string, 
   videoId: string
-}
-
-interface ILocalized {
-  title: string,
-  description: string
 }
 
 interface IResponseSnippetThumbnails {
@@ -46,7 +43,6 @@ interface IResponseSnippetThumbnails {
 export interface IResponseStatistic {
   viewCount: string,
   likeCount: string,
-  dislikeCount: string,
   favoriteCount: string,
   commentCount: string
 }

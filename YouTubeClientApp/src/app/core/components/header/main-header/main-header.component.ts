@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { debounceTime, Observable, tap } from 'rxjs';
 import { VideoResponseService } from 'src/app/youtube/services/video-response/video-response.service';
 
@@ -8,7 +8,7 @@ import { VideoResponseService } from 'src/app/youtube/services/video-response/vi
   styleUrls: ['./main-header.component.scss']
 })
 
-export class MainHeaderComponent {
+export class MainHeaderComponent implements AfterViewInit {
 
   @ViewChild('searchWord') public searchWord!: ElementRef<HTMLInputElement>;
   
@@ -18,9 +18,8 @@ export class MainHeaderComponent {
 
   constructor(private videoResponse: VideoResponseService) { }
 
-  public ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     const input: HTMLInputElement = this.searchWord.nativeElement;
-
     const inputVal: Observable<string> = new Observable((observer) => {
       input.oninput = () => observer.next(input.value);
     });
@@ -30,7 +29,7 @@ export class MainHeaderComponent {
       debounceTime(1000),
       tap(() => this.isTyping = false),
     ).subscribe((value) => {
-      if (!this.isTyping) {
+      if (!this.isTyping && value.length > 3) {
         this.word = value;
         this.search();
       }
@@ -45,14 +44,7 @@ export class MainHeaderComponent {
 
   displaySearchResult(): void {
     this.videoResponse.getResponse(this.word).subscribe(data => {
-      this.videoResponse.response = data.items
-      this.videoResponse.response.map(item => this.videoResponse.IDArr.push(item.id.videoId));
-      this.videoResponse.getStatic().subscribe(data => {
-        this.videoResponse.static = data.items;
-        this.videoResponse.response.forEach((element, index) => {
-          element.statistics = this.videoResponse.static[index].statistics;
-        });
-      });
+      this.videoResponse.response = data.items;
     });
   }
     
