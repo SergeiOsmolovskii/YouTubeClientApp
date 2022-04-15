@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -6,12 +6,26 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   templateUrl: './profile-panel.component.html',
   styleUrls: ['./profile-panel.component.scss']
 })
-export class ProfilePanelComponent {
 
-  /* then fix to observable */
-  
+export class ProfilePanelComponent implements OnInit{
+  public isLogged!: boolean | null;
+  public userLogin!: string;
+
+  ngOnInit(): void {
+    const userLogin = localStorage.getItem('userLogin');
+
+    if (userLogin) {
+      this.auth.setUserLogin(userLogin);
+      this.auth.isLogIn(true); 
+    }
+
+    this.auth.isLogged$.subscribe(data => this.isLogged = data);
+    this.auth.user$.subscribe(data => this.userLogin = data.login);
+  }
+
   constructor(public auth: AuthService) { }
-  public authButton = 'Login';
-  public userLogin: string = localStorage.getItem('userLogin') || 'Your name';
 
+  logout() { 
+    this.auth.logOut();
+  }
 }

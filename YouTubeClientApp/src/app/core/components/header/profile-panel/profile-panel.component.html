@@ -1,5 +1,6 @@
 <div class="profile">
   <h3 class="user-name">{{userLogin}}</h3>
   <div class="profile-icon"></div>
-  <button class="auth">{{authButton}}</button>
+  <button *ngIf="!isLogged" routerLink="/login" class="auth">Login</button>
+  <button *ngIf="isLogged" (click)="logout()"  class="auth">Logout</button>
 </div>
