@@ -1,16 +1,21 @@
-<form #loginForm="ngForm" (submit)="auth.logIn(loginForm)">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <h2>Login</h2>
   <div class="login-block">
     <label for="login">login</label>
-    <input type="text" name="login" [formControl]="loginControl" required autocomplete>
-    <!-- <p class="error" [hidden]="login.valid || login.pristine">The login email is invalid</p> -->
+    <input type="text" name="login" formControlName="loginControl" required autocomplete>
+    <div class="error" *ngIf="loginForm.controls['loginControl'].errors && loginForm.controls['loginControl']">
+      <div class="error" *ngIf="loginForm.controls['loginControl'].errors['required']"> Please enter a login email</div>
+      <div class="error" *ngIf="loginForm.controls['loginControl'].errors['email']"> The login email is invalid</div>
+    </div>
   </div>
   <div class="password-block">
     <label for="password">password</label>
-    <input type="password" name="password" [formControl]="passwordControl" required autocomplete>
-    <!-- <p class="error"></p> -->
+    <input type="password" name="password" formControlName="passwordControl" required autocomplete>
+  <div class="error" *ngIf="loginForm.controls['passwordControl'].errors && loginForm.controls['passwordControl']">
+    <div class="error" *ngIf="loginForm.controls['passwordControl'].errors['required']"> Please enter a password</div>
   </div>
-
+  
+  </div>
   <div class="buttons-block">
     <a routerLink="/registration"> Registration</a>
     <button type="submit">Login</button>
