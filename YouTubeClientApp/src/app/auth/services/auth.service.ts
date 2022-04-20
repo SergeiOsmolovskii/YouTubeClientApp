@@ -24,15 +24,13 @@ export class AuthService {
     this.user$ = this.user$$.asObservable();
   }
   
-
-
   generateToken(): void {
     this.token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
   }
 
-  logIn(form: NgForm) {
+  logIn(login: string, password: string): void {
     this.generateToken();
-    this.user$$.next({ login: form.value.login, password: form.value.password });
+    this.user$$.next({ login: login, password: password });
     this.isLogged$$.next(true);
     localStorage.setItem('userLogin', this.user$$.value.login);
     localStorage.setItem('token', this.token);

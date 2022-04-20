@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
 
   public loginForm!: FormGroup;
 
-
   constructor(
     public auth: AuthService,
     public formBuilder: FormBuilder
@@ -39,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.auth.logIn(this.loginForm.controls['loginControl'].value, this.loginForm.controls['passwordControl'].value);
   }
 
 
