@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { validateDate, validateTitleBlock, validateUrl } from 'src/app/shared/validators/add-new-card.validator';
 
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
   styleUrls: ['./admin-page.component.scss']
 })
+
 export class AdminPageComponent implements OnInit {
 
   public addCardForm!: FormGroup;
@@ -19,8 +21,7 @@ export class AdminPageComponent implements OnInit {
       titleControl: ['',
         [
           Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(20)
+          validateTitleBlock
         ]
       ],
       discriptionControl: ['',
@@ -30,17 +31,20 @@ export class AdminPageComponent implements OnInit {
       ],
       imageControl: ['',
         [
-
+          Validators.required,
+          validateUrl
         ]
       ],
       linkControl: ['',
         [
-
+          Validators.required,
+          validateUrl
         ]
       ],
       dateControl: ['',
         [
-
+          Validators.required,
+          validateDate
         ]
       ],
 
@@ -48,7 +52,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   onSubmit() {
-
+    console.log(this.addCardForm.value);
   }
 
 }

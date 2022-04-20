@@ -31,5 +31,5 @@ export function validatePassword(control: AbstractControl): ValidationErrors | n
     || !specialCharacters.test(password) 
       ? {
         validatePassword: errorMessage
-      } : null; ;
+      } : null;
   }

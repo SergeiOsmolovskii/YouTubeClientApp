@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.addNewCardForm {
+.add-new-card-form {
   width: 345px;
   padding: 25px 20px;
   background: #F2F2F2;
@@ -60,7 +60,9 @@
   text-align: center;
 }
 
-.ng-valid[required], .ng-valid.required {
+.ng-valid[required],
+.ng-valid.required, 
+.ng-valid {
   border-radius: 0px 0px 5px 5px;
   border-bottom: 5px solid var(--greenColor);
 }  
