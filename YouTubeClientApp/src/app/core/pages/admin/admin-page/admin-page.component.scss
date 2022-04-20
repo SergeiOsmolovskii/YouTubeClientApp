@@ -1,0 +1,71 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.addNewCardForm {
+  width: 345px;
+  padding: 25px 20px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title {
+  margin: 0px 0px 10px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input-label {
+  margin-bottom: 5px;
+  font-size: 10px;
+  color: var(--grayTextColor);;
+}
+
+.block-input {
+  margin-bottom: 5px;
+  padding: 12px 8px;
+  background-color: #E0E0E0;
+  border: none;
+  font-size: 10px;
+}
+
+.new-card-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-block {
+  margin-bottom: 20px;
+}
+
+.buttons-block {
+  text-align: right;
+}
+
+.submitButton {
+  padding: 8px 48px;
+  background-color: var(--blueColor);
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  filter: drop-shadow(2px 0px 4px var(--blueColor));
+}
+
+.error {
+  color: var(--redColor);
+  text-align: center;
+}
+
+.ng-valid[required], .ng-valid.required {
+  border-radius: 0px 0px 5px 5px;
+  border-bottom: 5px solid var(--greenColor);
+}  
+
+.ng-invalid:not(form).ng-touched {
+  border-radius: 0px 0px 5px 5px;
+  border-bottom: 5px solid var(--redColor);
+}
