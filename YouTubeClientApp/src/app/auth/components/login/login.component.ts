@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { validatePassword } from 'src/app/shared/validators/password.validator';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -30,7 +31,8 @@ export class LoginComponent implements OnInit {
       passwordControl: ['',
         [
          Validators.required,
-         Validators.minLength(8)
+         Validators.minLength(8),
+         validatePassword
         ]
       ],
     })

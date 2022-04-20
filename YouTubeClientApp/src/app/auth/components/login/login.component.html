@@ -3,7 +3,7 @@
   <div class="login-block">
     <label for="login">login</label>
     <input type="text" name="login" formControlName="loginControl" required autocomplete>
-    <div class="error" *ngIf="loginForm.controls['loginControl'].errors && loginForm.controls['loginControl']">
+    <div class="error" *ngIf="loginForm.controls['loginControl'].errors && loginForm.controls['loginControl'].dirty">
       <div class="error" *ngIf="loginForm.controls['loginControl'].errors['required']"> Please enter a login email</div>
       <div class="error" *ngIf="loginForm.controls['loginControl'].errors['email']"> The login email is invalid</div>
     </div>
@@ -11,8 +11,11 @@
   <div class="password-block">
     <label for="password">password</label>
     <input type="password" name="password" formControlName="passwordControl" required autocomplete>
-  <div class="error" *ngIf="loginForm.controls['passwordControl'].errors && loginForm.controls['passwordControl']">
-    <div class="error" *ngIf="loginForm.controls['passwordControl'].errors['required']"> Please enter a password</div>
+  <div class="error" *ngIf="loginForm.controls['passwordControl'].dirty">
+    <div class="error" *ngIf="loginForm.controls['passwordControl'].hasError('validatePassword') && !loginForm.controls['passwordControl'].hasError('required')"> 
+      {{loginForm.controls['passwordControl']?.errors?.['validatePassword']}}
+    </div>
+    <div class="error" *ngIf="loginForm.controls['passwordControl'].hasError('required')"> Please enter a password</div>
   </div>
   
   </div>
