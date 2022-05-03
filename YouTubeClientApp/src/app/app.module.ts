@@ -11,7 +11,7 @@ import { reducers, metaReducers } from './redux/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './redux/reducers/effects/app.effects';
+import { AppEffects } from './redux/effects/app.effects';
 
 @NgModule({
   declarations: [

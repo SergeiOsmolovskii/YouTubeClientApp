@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { validateDate, validateTitleBlock, validateUrl } from 'src/app/shared/validators/add-new-card.validator';
 
 @Component({
@@ -13,7 +14,8 @@ export class AdminPageComponent implements OnInit {
   public addCardForm!: FormGroup;
 
   constructor(
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    private store: Store
   ) { }
 
   ngOnInit(): void {
@@ -53,6 +55,7 @@ export class AdminPageComponent implements OnInit {
 
   onSubmit() {
     console.log(this.addCardForm.value);
+    // this.store.dispatch(postVideo()); 
   }
 
 }
