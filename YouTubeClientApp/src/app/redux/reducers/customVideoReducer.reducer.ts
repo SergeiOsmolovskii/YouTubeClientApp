@@ -1,6 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import {  } from "events";
-import { createCustomVideos } from "../actions/addCustomVideo";
+import { createCustomVideos } from "../actions/addCustomVideo.action";
 import { ICustomVideos } from "../state.models";
 
 export interface ICustomVideosState {

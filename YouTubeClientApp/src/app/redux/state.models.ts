@@ -9,17 +9,17 @@ export interface ICustomVideos {
 }
 
 export interface IState {
-  searchResults: IResponseItem[],
+  youtubeVideos: IResponseItem[],
   customVideos: ICustomVideos[]
 }
 
 export const initiaState: IState = {
-  searchResults: [],
+  youtubeVideos: [],
   customVideos: []
 }
 
 export interface IResponseItemState {
-  searchResults: IResponseItem[]
+  youtubeVideos: IResponseItem[]
 }
 
 export interface ICustomVideosState {

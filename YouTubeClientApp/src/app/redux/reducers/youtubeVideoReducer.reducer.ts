@@ -1,21 +1,20 @@
 import { createReducer, on } from "@ngrx/store";
 import { IVideoResponse } from "src/app/youtube/models/video-response.model";
-import { getYoutubeVideos } from "../actions/addVideoFromYouTube";
+import { getYoutubeVideos } from "../actions/addVideoFromYouTube.action";
 
 export interface IYoutubeVideosState {
-  searchResults: IVideoResponse[],
+  youtubeVideos: IVideoResponse[],
 }
 
 export const initialYoutubeVideoState: IYoutubeVideosState = {
-  searchResults: [],
+  youtubeVideos: [],
 }
-
 
 export const youtubeVideoReducer = createReducer(
   initialYoutubeVideoState,
   on(getYoutubeVideos,
-    (state, {searchResults} ) => ({
+    (state, {youtubeVideos} ) => ({
     ...state,
-    customVideos: [...searchResults]
+    youtubeVideos: [...youtubeVideos]
   }))
 );
