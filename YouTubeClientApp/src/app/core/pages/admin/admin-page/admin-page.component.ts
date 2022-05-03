@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { createCustomVideos } from 'src/app/redux/actions/addCustomVideo.action';
-import { customVideoReducer } from 'src/app/redux/reducers/customVideoReducer.reducer';
 import { validateDate, validateTitleBlock, validateUrl } from 'src/app/shared/validators/add-new-card.validator';
 
 @Component({

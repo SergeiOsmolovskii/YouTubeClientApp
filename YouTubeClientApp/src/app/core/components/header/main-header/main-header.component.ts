@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { debounceTime, Observable, tap } from 'rxjs';
+import { getYoutubeVideos } from 'src/app/redux/actions/addVideoFromYouTube.action';
 import { VideoResponseService } from 'src/app/youtube/services/video-response/video-response.service';
 
 @Component({
@@ -16,7 +18,7 @@ export class MainHeaderComponent implements AfterViewInit {
   private word = '';
   private isTyping = false;
 
-  constructor(private videoResponse: VideoResponseService) { }
+  constructor(private videoResponse: VideoResponseService, private store: Store) { }
 
   ngAfterViewInit(): void {
     const input: HTMLInputElement = this.searchWord.nativeElement;
@@ -45,6 +47,7 @@ export class MainHeaderComponent implements AfterViewInit {
   displaySearchResult(): void {
     this.videoResponse.getResponse(this.word).subscribe(data => {
       this.videoResponse.response = data.items;
+      this.store.dispatch(getYoutubeVideos( { youtubeVideos : data.items } )); 
       console.log(this.videoResponse.response);
     });
   }

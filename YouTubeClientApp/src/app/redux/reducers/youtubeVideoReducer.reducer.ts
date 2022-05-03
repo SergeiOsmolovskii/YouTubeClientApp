@@ -1,9 +1,9 @@
 import { createReducer, on } from "@ngrx/store";
-import { IVideoResponse } from "src/app/youtube/models/video-response.model";
+import { IResponseItem } from "src/app/youtube/models/video-response.model";
 import { getYoutubeVideos } from "../actions/addVideoFromYouTube.action";
 
 export interface IYoutubeVideosState {
-  youtubeVideos: IVideoResponse[],
+  youtubeVideos: IResponseItem[],
 }
 
 export const initialYoutubeVideoState: IYoutubeVideosState = {
