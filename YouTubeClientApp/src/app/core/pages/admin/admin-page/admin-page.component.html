@@ -4,7 +4,7 @@
   <div class="new-card-block title-block">
     <label class="input-label" for="title">title</label>
     <input class="block-input" type="text" name="title" formControlName="titleControl" required autocomplete>
-    <div class="error" *ngIf="addCardForm.controls['titleControl'].errors && addCardForm.controls['titleControl'].dirty">
+    <div class="error" *ngIf="addCardForm.controls['titleControl'].errors && addCardForm.controls['titleControl'].touched">
       <div class="error" *ngIf="addCardForm.controls['titleControl'].errors['required']"> Please enter a title</div>
       <div class="error" *ngIf="addCardForm.controls['titleControl'].hasError('validateTitleBlock')"> 
         {{addCardForm.controls['titleControl']?.errors?.['validateTitleBlock']}}
@@ -15,7 +15,7 @@
   <div class="new-card-block discription-block">
     <label class="input-label" for="discription">discription</label>
     <input class="block-input" type="text" name="discription" formControlName="discriptionControl" autocomplete>
-    <div class="error" *ngIf="addCardForm.controls['discriptionControl'].errors && addCardForm.controls['discriptionControl'].dirty">
+    <div class="error" *ngIf="addCardForm.controls['discriptionControl'].errors && addCardForm.controls['discriptionControl'].touched">
       <div class="error" *ngIf="addCardForm.controls['discriptionControl'].hasError('maxlength')"> 
         The description is too long
       </div>
@@ -25,7 +25,7 @@
   <div class="new-card-block image-block">
     <label class="input-label" for="image">img</label>
     <input class="block-input" type="text" name="image" formControlName="imageControl" required autocomplete>
-    <div class="error" *ngIf="addCardForm.controls['imageControl'].errors && addCardForm.controls['imageControl'].dirty">
+    <div class="error" *ngIf="addCardForm.controls['imageControl'].errors && addCardForm.controls['imageControl'].touched">
       <div class="error" *ngIf="addCardForm.controls['imageControl'].errors['required']"> Please enter an image</div>
       <div class="error" *ngIf="addCardForm.controls['imageControl'].hasError('validateUrl')"> 
         The image link is invalid
@@ -36,7 +36,7 @@
   <div class="new-card-block link-block">
     <label class="input-label" for="link">link video</label>
     <input class="block-input" type="text" name="link" formControlName="linkControl" required autocomplete>
-    <div class="error" *ngIf="addCardForm.controls['linkControl'].errors && addCardForm.controls['linkControl'].dirty">
+    <div class="error" *ngIf="addCardForm.controls['linkControl'].errors && addCardForm.controls['linkControl'].touched">
       <div class="error" *ngIf="addCardForm.controls['linkControl'].errors['required']"> Please enter a link to the video</div>
       <div class="error" *ngIf="addCardForm.controls['linkControl'].hasError('validateUrl')"> 
         The video link is invalid
@@ -47,7 +47,7 @@
   <div class="new-card-block date-block">
     <label class="input-label" for="date">date</label>
     <input class="block-input" type="date" name="date" formControlName="dateControl" required autocomplete>
-    <div class="error" *ngIf="addCardForm.controls['dateControl'].errors && addCardForm.controls['dateControl'].dirty">
+    <div class="error" *ngIf="addCardForm.controls['dateControl'].errors && addCardForm.controls['dateControl'].touched">
       <div class="error" *ngIf="addCardForm.controls['dateControl'].errors['required']"> Please enter a creation date</div>
       <div class="error" *ngIf="addCardForm.controls['dateControl'].hasError('validateDate')"> 
         The date is invalid
